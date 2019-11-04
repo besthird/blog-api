@@ -12,7 +12,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Service\Type\User;
+use App\Model\User;
+use App\Service\Type\UserType;
 use Hyperf\GraphQL\Annotation\Query;
 
 class UserController extends Controller
@@ -20,8 +21,9 @@ class UserController extends Controller
     /**
      * @Query
      */
-    public function user(int $id): User
+    public function user(int $id): UserType
     {
-        return new User();
+        $model = User::query()->find($id);
+        return new UserType($model);
     }
 }

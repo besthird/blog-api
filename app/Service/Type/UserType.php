@@ -12,16 +12,20 @@ declare(strict_types=1);
 
 namespace App\Service\Type;
 
+use App\Model\User;
 use Hyperf\GraphQL\Annotation\Field;
 use Hyperf\GraphQL\Annotation\Type;
 
 /**
  * @Type
  */
-class User
+class UserType
 {
-    public function __construct()
+    protected $model;
+
+    public function __construct(User $model)
     {
+        $this->model = $model;
     }
 
     /**
@@ -29,6 +33,14 @@ class User
      */
     public function getId(): int
     {
-        return 1;
+        return $this->model->id;
+    }
+
+    /**
+     * @Field
+     */
+    public function getName(): string
+    {
+        return $this->model->name;
     }
 }
