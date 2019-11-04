@@ -11,7 +11,5 @@ declare(strict_types=1);
  */
 
 return [
-    'http' => [
-        Hyperf\GraphQL\GraphQLMiddleware::class,
-    ],
+    '',
 ];
