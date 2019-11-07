@@ -34,10 +34,18 @@ abstract class HttpTestCase extends TestCase
         parent::__construct($name, $data, $dataName);
         $this->client = make(Testing\Client::class);
         // $this->client = make(Testing\HttpClient::class, ['baseUri' => 'http://127.0.0.1:9501']);
+        // $this->client = make(GraphQLClient::class, ['baseUri' => 'http://127.0.0.1:9501']);
     }
 
     public function __call($name, $arguments)
     {
         return $this->client->{$name}(...$arguments);
+    }
+
+    public function query($query)
+    {
+        return $this->client->json('/graphql', [
+            'query' => $query,
+        ]);
     }
 }

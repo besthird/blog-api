@@ -20,4 +20,21 @@ use HyperfTest\HttpTestCase;
  */
 class UserTest extends HttpTestCase
 {
+    public function testUserInfo()
+    {
+        $query = <<<'GRAPHQL'
+query {
+    user(id: 1){
+        id,
+        name
+    }
+}
+GRAPHQL;
+
+        $res = $this->query($query);
+
+        $this->assertTrue(array_key_exists('data', $res));
+        $this->assertTrue(array_key_exists('id', $res['data']['user']));
+        $this->assertTrue(array_key_exists('name', $res['data']['user']));
+    }
 }
