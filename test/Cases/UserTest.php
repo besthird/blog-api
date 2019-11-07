@@ -18,10 +18,6 @@ use HyperfTest\HttpTestCase;
  * @internal
  * @coversNothing
  */
-class ExampleTest extends HttpTestCase
+class UserTest extends HttpTestCase
 {
-    public function testExample()
-    {
-        $this->assertTrue(true);
-    }
 }
