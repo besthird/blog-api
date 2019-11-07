@@ -21,6 +21,9 @@ use Hyperf\GraphQL\Annotation\Type;
  */
 class UserType
 {
+    /**
+     * @var User
+     */
     protected $model;
 
     public function __construct(User $model)
