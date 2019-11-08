@@ -16,7 +16,7 @@ return [
             'class' => Monolog\Handler\StreamHandler::class,
             'constructor' => [
                 'stream' => fopen('php://stdout', 'a'),
-                'level' => Monolog\Logger::DEBUG,
+                'level' => Monolog\Logger::INFO,
             ],
         ],
         'formatter' => [
