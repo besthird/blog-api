@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 return [
     'http' => [
+    ],
+    'GraphQL' => [
         Hyperf\GraphQL\GraphQLMiddleware::class,
     ],
 ];
