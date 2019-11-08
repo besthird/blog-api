@@ -46,4 +46,44 @@ class UserType
     {
         return $this->model->name;
     }
+
+    /**
+     * @Field
+     */
+    public function getMobile(): string
+    {
+        return $this->model->mobile;
+    }
+
+    /**
+     * @Field
+     */
+    public function getAvatar(): string
+    {
+        return $this->model->avatar;
+    }
+
+    /**
+     * @Field
+     */
+    public function getGender(): int
+    {
+        return $this->model->gender;
+    }
+
+    /**
+     * @Field
+     */
+    public function getCreatedAt(): string
+    {
+        return $this->model->created_at->toDateTimeString();
+    }
+
+    /**
+     * @Field
+     */
+    public function getUpdatedAt(): string
+    {
+        return $this->model->updated_at->toDateTimeString();
+    }
 }

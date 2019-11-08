@@ -26,7 +26,8 @@ class UserTest extends HttpTestCase
 query {
     user(id: 1){
         id,
-        name
+        name,
+        mobile
     }
 }
 GRAPHQL;
@@ -36,5 +37,25 @@ GRAPHQL;
         $this->assertTrue(array_key_exists('data', $res));
         $this->assertTrue(array_key_exists('id', $res['data']['user']));
         $this->assertTrue(array_key_exists('name', $res['data']['user']));
+    }
+
+    public function testUserSave()
+    {
+        $query = <<<'GRAPHQL'
+mutation {
+    user(id: 1, input:{
+        name: "limx",
+        mobile: "13250874521",
+        avatar: "https://avatars0.githubusercontent.com/u/16648551?s=460&v=4"
+    }){
+        id
+    }
+}
+GRAPHQL;
+
+        $res = $this->query($query);
+
+        $this->assertTrue(array_key_exists('data', $res));
+        $this->assertTrue(array_key_exists('id', $res['data']['user']));
     }
 }
