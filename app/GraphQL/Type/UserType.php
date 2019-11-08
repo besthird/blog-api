@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-namespace App\Service\Type;
+namespace App\GraphQL\Type;
 
 use App\Model\User;
 use Hyperf\GraphQL\Annotation\Field;

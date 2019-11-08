@@ -10,13 +10,13 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-namespace App\Controller;
+namespace App\GraphQL\Query;
 
+use App\GraphQL\Type\UserType;
 use App\Model\User;
-use App\Service\Type\UserType;
 use Hyperf\GraphQL\Annotation\Query;
 
-class UserController extends Controller
+class UserQuery
 {
     /**
      * @Query
