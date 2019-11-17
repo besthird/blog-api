@@ -34,7 +34,7 @@
         "hyperf/event": "1.1.*",
         "hyperf/exception-handler": "1.1.*",
         "hyperf/framework": "1.1.*",
-        "hyperf/graphql": "1.1.*",
+        "hyperf/graphql": "1.1.x-dev",
         "hyperf/guzzle": "1.1.*",
         "hyperf/http-server": "1.1.*",
         "hyperf/logger": "1.1.*",
@@ -81,10 +81,6 @@
         "init-proxy": "init-proxy.sh"
     },
     "repositories": {
-        "h": {
-            "type": "path",
-            "url": "../../limingxinleo/hyperf/src/*"
-        },
         "packagist": {
             "type": "composer",
             "url": "https://mirrors.aliyun.com/composer"
